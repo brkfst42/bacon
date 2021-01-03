@@ -1,11 +1,6 @@
 
 name: "Breakfast 1001"
 author: "Freda"
-output_dir: 
-output: 
-  prettydoc::html_pretty:
-    theme: tactile
-    highlight: github
 navbar: 
   title: "Breakfast"
   left:

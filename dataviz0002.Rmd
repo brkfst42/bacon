@@ -20,7 +20,7 @@ Dawtry, R. J., Sutton, R. M., & Sibley, C. G. (2015). Why Wealthier People Think
 The data is available at Open Science Foundation: https://osf.io/3mftr/
 I'm using the data file "1a processed.xlsx" under Study 1a. 
 
-![](Large_image_Fig1.jpeg)
+![](files/Large_image_Fig1.jpeg)
 
 **Note** I was going to reproduce both charts, but ran out of time. 
 I ended up focusing on Fig 1b, and will do Fig 1a tomorrow. 
@@ -31,7 +31,7 @@ The **hashtag #FUTURE** helps me find where I'd like to improve when I look back
 
 library(tidyverse)
 
-dat01 <- read_csv("Dawtry Sutton and Sibley 2015 Study 1a.csv") 
+dat01 <- read_csv("files/Dawtry Sutton and Sibley 2015 Study 1a.csv") 
 
 # sort data by PS, split by tertiles
 # create new column, with labels for wealthiest tertile, poorest tertile, and middle tertile (w, p, m)

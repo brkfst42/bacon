@@ -12,15 +12,15 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-### Hello again, Day 3 and this is going to be a quick one. ### 
+## Hello again, Day 3 and this is going to be a quick one. ## 
 
 Following on from yesterday, I will continue to reproduce Fig 1a. 
-![](Large_image_Fig1.jpeg)
+![](files/Large_image_Fig1.jpeg)
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 library(tidyverse)
 
-dat03 <- read_csv("Dawtry Sutton and Sibley 2015 Study 1a copy.csv") 
+dat03 <- read_csv("files/Dawtry Sutton and Sibley 2015 Study 1a.csv") 
 
 dat03 <- dat03 %>% select(Household_Income, SC_15, SC_30, SC_45, SC_60, SC_75, SC_90, 
                           SC_105, SC_120, SC_135, SC_150, SC_150plus) %>%
@@ -91,7 +91,7 @@ linegraph
 
 ```
 
-### Since we have some extra time, let's build a bar graph. ###
+## Since we have some extra time, let's build a bar graph. ##
 
 ```{r}
 ggplot(dat04, aes(fill=tertile, y = perc, x = income_bracket)) + 

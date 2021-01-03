@@ -27,7 +27,7 @@ https://www.r-graph-gallery.com/304-highlight-a-group-in-lollipop.html
 
 The original table looks like this: 
 
-![](Cases by jurisdiction 1986-2020.jpg){width=60%}
+![](files/Cases by jurisdiction 1986-2020.jpg){width=60%}
 
 We want to make a chart that answer the following questions: 
 
@@ -43,7 +43,7 @@ We want to make a chart that answer the following questions:
 
 library(tidyverse)
 
-lol01 <- read_csv("Climate_change_cases_1986_to_2020.csv") 
+lol01 <- read_csv("files/Climate_change_cases_1986_to_2020.csv") 
 
 #removed United States (at 1,213 cases it distorts the rest of the data)
 
@@ -92,24 +92,6 @@ plot_lol01
 # ggplot2 version 3.3.2
 
 ```
-## Colors ##
-
-Since we have to have some colors for dataviz, I am following the brand toolkit of the University of Glasgow. 
-
-University Blue #003865
-Burgundy #7D2239
-Cobalt #005C8A
-Lavender #5B4D94
-Leaf #006630
-Moss #385A4F
-Pillarbox #B30C00
-Rust #9A3A06
-Sandstone #52473B
-Sky Blue #005398
-Slate #4F5961
-Thistle #951272
-
-Source: https://www.gla.ac.uk/myglasgow/staff/brandtoolkit/brandelements/colours/
-
-Also, I installed and played around with the **hrbrthemes** package, but in the end decided it was unnecessary for my purposes (and uninstalled it).
+**Notes from Playing Around**
+I installed and played around with the **hrbrthemes** package, but in the end decided it was unnecessary for my purposes (and uninstalled it).
 https://github.com/hrbrmstr/hrbrthemes

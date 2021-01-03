@@ -17,7 +17,7 @@ Dawtry, R. J., Sutton, R. M., & Sibley, C. G. (2015). Why Wealthier People Think
 
 My chart today will be based on the format of Figure 1 shown below, so that the chart can help my understanding of the paper. 
 
-![](Large_image_Fig1.jpeg)
+![](files/Large_image_Fig1.jpeg)
 Figure 1 Charts a and b above (Dawtry et al., 2015) show 305 participants' perception of wealth distribution in the United States. Chart (a) showed participants' estimation of their social circles' income, and chart (b) showed participants' estimation of US household incomes. 
 
 About the paper: Researchers tested their hypothesis that the higher the participants' own household incomes, and the higher their perceived household incomes of their social circles, the more likely the participants would assume that society as a whole is wealthier than it actually is. 
@@ -34,7 +34,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
 
-dat01A <- read_csv("HINC_01_2019.csv") 
+dat01A <- read_csv("files/HINC_01_2019.csv") 
 # checked on glimpse(), 1 row and 42 columns, need pivot_longer()
 # save Total value for later use 
 Total <- 128451

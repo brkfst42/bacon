@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Freda Wan" />
+
+<meta name="date" content="2021-01-04" />
+
+<title>Breakfast_0004</title>
+
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="site_libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="site_libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+/* A workaround for https://github.com/jgm/pandoc/issues/4278 */
+a.sourceLine {
+  pointer-events: auto;
+}
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+<link rel="stylesheet" href="dataviz_lolli_0004_files/style.css" type="text/css" />
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<div id="container">
+<div class="inner">
+<header>
+<h1 class="title toc-ignore">Breakfast_0004</h1>
+<h3 class="author">Freda Wan</h3>
+<h3 class="date">January 4, 2021</h3>
+</header>
+
+<hr>
+
+
+
+<div id="good-morning.-today-im-taking-a-shot-at-making-a-lollipop-chart." class="section level2">
+<h2>Good morning. Today I’m taking a shot at making a lollipop chart.</h2>
+<p>The goal is to create some other kind of visualization and practice writing more reproducible, less messy ggplot code.</p>
+<p>I created the CSV file based on page 6 (Table 1.1) of this document. The data source is from Climate Change Laws of the World (CCLW).</p>
+<p><strong>Setzer, J. &amp; Byrnes, R. (2020).</strong> Global trends in climate change litigation: 2020 snapshot. London: Grantham Research Institute on Climate Change and the Environment and Centre for Climate Change Economics and Policy, London School of Economics and Political Science. <a href="https://www.lse.ac.uk/granthaminstitute/wp-content/uploads/2020/07/Global-trends-in-climate-change-litigation_2020-snapshot.pdf" class="uri">https://www.lse.ac.uk/granthaminstitute/wp-content/uploads/2020/07/Global-trends-in-climate-change-litigation_2020-snapshot.pdf</a></p>
+<p>For the code for lollipop charts, I consulted this page: <a href="https://www.r-graph-gallery.com/304-highlight-a-group-in-lollipop.html" class="uri">https://www.r-graph-gallery.com/304-highlight-a-group-in-lollipop.html</a></p>
+<p>The original table looks like this:</p>
+<p><img src="files/Cases%20by%20jurisdiction%201986-2020.jpg" style="width:60.0%" /></p>
+<p>We want to make a chart that answer the following questions:</p>
+<ol style="list-style-type: decimal">
+<li><p>Other than the United States, how do other countries rank in the number of climate change litigation cases?</p></li>
+<li><p>Which are developing countries and how many cases do they have?</p></li>
+</ol>
+<p><strong>Note1</strong> I don’t know what to do with the United Nations bodies and international courts, so I’ll just remove them for now. If someone has advice or ideas on how to represent these entities in the global context of litigation numbers (separate chart?), I am happy to hear from you.</p>
+<p><strong>Note2</strong> I tried sorting Top 20 countries only. Then found that it didn’t make much sense because the data is from 1986 till now, and also many countries tie at the lower number of cases (7 countries at 2 cases). Might be the more logical choice to just plot all the countries. Nonetheless I used the code <strong>r slice_max(order_by = Cases, n=20)</strong> to subset rows based on the order of column values.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>lol01 &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;files/Climate_change_cases_1986_to_2020.csv&quot;</span>) </span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co">#removed United States (at 1,213 cases it distorts the rest of the data)</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a>dat01 &lt;-<span class="st"> </span>lol01 <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="st">              </span><span class="kw">filter</span>(Country<span class="op">!=</span><span class="st">&quot;United States&quot;</span>, </span>
+<span id="cb1-9"><a href="#cb1-9"></a>                     Country<span class="op">!=</span><span class="st">&quot;UN Framework Convention on Climate Change&quot;</span>, </span>
+<span id="cb1-10"><a href="#cb1-10"></a>                     Country<span class="op">!=</span><span class="st">&quot;Inter-American Court and Commission on Human Rights&quot;</span>, </span>
+<span id="cb1-11"><a href="#cb1-11"></a>                     Country<span class="op">!=</span><span class="st">&quot;UN Human Rights Committee&quot;</span>, </span>
+<span id="cb1-12"><a href="#cb1-12"></a>                     Country<span class="op">!=</span><span class="st">&quot;UN Special Rapporteurs&quot;</span>, </span>
+<span id="cb1-13"><a href="#cb1-13"></a>                     Country<span class="op">!=</span><span class="st">&quot;International Court of Justice&quot;</span>, </span>
+<span id="cb1-14"><a href="#cb1-14"></a>                     Country<span class="op">!=</span><span class="st">&quot;UN Committee on the Rights of the Child&quot;</span>) <span class="op">%&gt;%</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="st">              </span><span class="kw">arrange</span>(<span class="kw">desc</span>(Cases)) </span>
+<span id="cb1-16"><a href="#cb1-16"></a></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="co"># ggplot by default shows countries by alphabetical order. Annoying.</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co"># tried mutate to as.factor() or as.ordered() and it didn&#39;t work</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="co"># solved by reorder()</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a></span>
+<span id="cb1-21"><a href="#cb1-21"></a>developing =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;India&quot;</span>, <span class="st">&quot;Brazil&quot;</span>, <span class="st">&quot;Pakistan&quot;</span>, <span class="st">&quot;South Africa&quot;</span>, </span>
+<span id="cb1-22"><a href="#cb1-22"></a>              <span class="st">&quot;Chile&quot;</span>, <span class="st">&quot;Colombia&quot;</span>, <span class="st">&quot;Philippines&quot;</span>, <span class="st">&quot;Ukraine&quot;</span>, <span class="st">&quot;Argentina&quot;</span>,</span>
+<span id="cb1-23"><a href="#cb1-23"></a>              <span class="st">&quot;Ecuador&quot;</span>, <span class="st">&quot;Indonesia&quot;</span>, <span class="st">&quot;Nigeria&quot;</span>, <span class="st">&quot;Kenya&quot;</span>, <span class="st">&quot;Peru&quot;</span>)</span>
+<span id="cb1-24"><a href="#cb1-24"></a></span>
+<span id="cb1-25"><a href="#cb1-25"></a></span>
+<span id="cb1-26"><a href="#cb1-26"></a>plot_lol01 &lt;-<span class="st"> </span><span class="kw">ggplot</span>(dat01, <span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">reorder</span>(Country, Cases), </span>
+<span id="cb1-27"><a href="#cb1-27"></a>                  <span class="dt">y =</span> Cases)) <span class="op">+</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="st">  </span><span class="kw">geom_segment</span>(<span class="kw">aes</span>(<span class="dt">x=</span><span class="kw">reorder</span>(Country, Cases), <span class="dt">xend=</span>Country, <span class="dt">y=</span><span class="dv">0</span>, <span class="dt">yend=</span>Cases), </span>
+<span id="cb1-29"><a href="#cb1-29"></a>               <span class="dt">color=</span><span class="kw">ifelse</span>(dat01<span class="op">$</span>Country <span class="op">%in%</span><span class="st"> </span>developing, <span class="st">&quot;#00CC00&quot;</span>, <span class="st">&quot;grey&quot;</span>), </span>
+<span id="cb1-30"><a href="#cb1-30"></a>               <span class="dt">size=</span><span class="kw">ifelse</span>(dat01<span class="op">$</span>Country <span class="op">%in%</span><span class="st"> </span>developing, <span class="fl">1.5</span>, <span class="fl">0.7</span>)) <span class="op">+</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">color=</span><span class="kw">ifelse</span>(dat01<span class="op">$</span>Country <span class="op">%in%</span><span class="st"> </span>developing, <span class="st">&quot;#00CC00&quot;</span>, <span class="st">&quot;grey&quot;</span>), </span>
+<span id="cb1-32"><a href="#cb1-32"></a>             <span class="dt">size=</span><span class="kw">ifelse</span>(dat01<span class="op">$</span>Country <span class="op">%in%</span><span class="st"> </span>developing, <span class="fl">3.5</span>, <span class="fl">1.2</span>) ) <span class="op">+</span></span>
+<span id="cb1-33"><a href="#cb1-33"></a><span class="st">  </span><span class="kw">coord_flip</span>() <span class="op">+</span></span>
+<span id="cb1-34"><a href="#cb1-34"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position=</span><span class="st">&quot;none&quot;</span>, </span>
+<span id="cb1-35"><a href="#cb1-35"></a>    <span class="dt">plot.caption =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;italic&quot;</span>)</span>
+<span id="cb1-36"><a href="#cb1-36"></a>  ) <span class="op">+</span></span>
+<span id="cb1-37"><a href="#cb1-37"></a><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span></span>
+<span id="cb1-38"><a href="#cb1-38"></a><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Cases&quot;</span>) <span class="op">+</span></span>
+<span id="cb1-39"><a href="#cb1-39"></a><span class="co">#  scale_x_discrete(, expand = c(0,0)) +</span></span>
+<span id="cb1-40"><a href="#cb1-40"></a><span class="co">#  scale_y_continuous(expand = c(0,0))</span></span>
+<span id="cb1-41"><a href="#cb1-41"></a><span class="kw">labs</span>(</span>
+<span id="cb1-42"><a href="#cb1-42"></a><span class="dt">title =</span> <span class="st">&quot;Number of Climate Change Litigation Cases, 1986-2020&quot;</span>, </span>
+<span id="cb1-43"><a href="#cb1-43"></a><span class="dt">subtitle=</span><span class="st">&quot;Cumulative Total. Excluded: United States, UN agencies &amp; international courts&quot;</span>, <span class="dt">caption=</span><span class="st">&quot;Data source: Climate Change Laws of the World&quot;</span>)</span>
+<span id="cb1-44"><a href="#cb1-44"></a></span>
+<span id="cb1-45"><a href="#cb1-45"></a>plot_lol01</span></code></pre></div>
+<p><img src="dataviz_lolli_0004_files/figure-html/unnamed-chunk-1-1.png" /><!-- --></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># R version 4.0.3</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="co"># ggplot2 version 3.3.2</span></span></code></pre></div>
+<p><strong>Notes from Playing Around</strong> I installed and played around with the <strong>hrbrthemes</strong> package, but in the end decided it was unnecessary for my purposes (and uninstalled it). <a href="https://github.com/hrbrmstr/hrbrthemes" class="uri">https://github.com/hrbrmstr/hrbrthemes</a></p>
+</div>
+</div>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
