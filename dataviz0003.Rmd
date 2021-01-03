@@ -1,0 +1,130 @@
+---
+title: Breakfast_0003
+author: Freda Wan
+date: January 3, 2021
+output:
+  prettydoc::html_pretty:
+    theme: tactile
+    highlight: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Hello again, Day 3 and this is going to be a quick one. ### 
+
+Following on from yesterday, I will continue to reproduce Fig 1a. 
+![](Large_image_Fig1.jpeg)
+
+```{r}
+library(tidyverse)
+
+dat03 <- read_csv("Dawtry Sutton and Sibley 2015 Study 1a copy.csv") 
+
+dat03 <- dat03 %>% select(Household_Income, SC_15, SC_30, SC_45, SC_60, SC_75, SC_90, 
+                          SC_105, SC_120, SC_135, SC_150, SC_150plus) %>%
+                  mutate(tertile = ntile(Household_Income, 3)) %>%
+                  filter(tertile %in% c("1", "3")) %>% 
+                  select(-Household_Income)
+
+dat_tertile031 <- dat03 %>% filter(tertile == 1) %>%
+                          pivot_longer(cols = starts_with("SC_"), 
+                                 names_to = "income_bracket", 
+                                 values_to = "count") %>%
+                          group_by(income_bracket) %>%
+                          summarise(perc = sum(count)/10100 *100, 
+                                    tertile = 1)
+
+dat_tertile033 <- dat03 %>% filter(tertile == 3) %>%
+                          pivot_longer(cols = starts_with("SC_"), 
+                                 names_to = "income_bracket", 
+                                 values_to = "count") %>%
+                          group_by(income_bracket) %>%
+                          summarise(perc = sum(count)/10000*100, 
+                                    tertile = 3)
+
+dat04 <- dat_tertile031 %>%  mutate(tertile = "Poorest Tertile of Participants") %>%
+                        bind_rows(dat_tertile033 %>%
+                        mutate(tertile = "Wealthiest Tertile of Participants")) %>%
+                        mutate(income_bracket = recode(income_bracket,
+                                                     "SC_15" = 1, 
+                                                     "SC_30" = 2, 
+                                                     "SC_45" = 3, 
+                                                     "SC_60" = 4, 
+                                                     "SC_75" = 5, 
+                                                     "SC_90" = 6, 
+                                                     "SC_105" = 7, 
+                                                     "SC_120" = 8, 
+                                                     "SC_135" = 9, 
+                                                     "SC_150" = 10, 
+                                                     "SC_150plus" = 11))
+
+linegraph <- ggplot(dat04, 
+       aes(y = perc, x = income_bracket, 
+           color = tertile)) + 
+  geom_line(show.legend = TRUE, size = 1.2, aes(linetype= tertile)) +
+  scale_color_manual(values=c("#FFA500","#008080")) +
+  scale_linetype_manual(values = c("solid", "dotted")) +
+  ggtitle("1a. Participants' Estimates of Income Distribution of Their Social Circles") +
+  scale_x_continuous(name = "Income ('000 USD)",
+                   breaks = c(1,2,3,4,5,6,7,8,9,10,11),
+                   labels = c("0-15","15-30", "30-45", "45-60", "60-75", 
+                              "75-90", "90-105", "105-120", "120-135", "135-150", 
+                              "150+"), 
+                   expand = c(0,0)) +
+  scale_y_continuous(name = "Estimated Mean Percentage of People", 
+                      limits = c(0, 30), 
+                     expand = c(0,0)) +
+  
+  theme_classic() +
+  
+  theme(plot.title = element_text(hjust = 0.5, face = "bold", size=14), 
+        axis.text.x = element_text(angle = 45, hjust=1, size=12),
+        axis.text.y = element_text(size=12), 
+        axis.title.x = element_text(size=13, face = "bold"), 
+        axis.title.y = element_text(size=13, face = "bold"), 
+        legend.title = element_blank(), 
+        legend.position=c(0.8, 0.8))
+
+linegraph
+
+```
+
+### Since we have some extra time, let's build a bar graph. ###
+
+```{r}
+ggplot(dat04, aes(fill=tertile, y = perc, x = income_bracket)) + 
+    geom_bar(position="dodge", stat="identity", 
+             width=0.7) + 
+    #scale_fill_manual(values = c("#FFA500","#008080")) +
+    ggtitle("1a. Bar Chart Alternative") +
+    scale_color_manual(values=c("#FFA500","#008080")) +
+    scale_x_continuous(name = "Income ('000 USD)",
+                   breaks = c(1,2,3,4,5,6,7,8,9,10,11),
+                   labels = c("0-15","15-30", "30-45", "45-60", "60-75", 
+                              "75-90", "90-105", "105-120", "120-135", "135-150", 
+                              "150+"), 
+                   expand = c(0,0)) +
+    scale_y_continuous(name="Percentage of total households", 
+                        limits = c(0, 30), 
+                       expand = c(0,0)) +
+
+    theme_classic() +
+    theme(plot.title = element_text(hjust = 0.5, face = "bold", size=14), 
+        axis.text.x = element_text(angle = 45, hjust=1, size=12),
+        axis.text.y = element_text(size=12), 
+        axis.title.x = element_text(size=13, face = "bold"), 
+        axis.title.y = element_text(size=13, face = "bold"), 
+        legend.title = element_blank(), 
+        legend.position=c(0.8, 0.8))
+
+
+# Notes for #FUTURE: 
+# From tomorrow onwards, I'll write ggplot code in a more modularized way. 
+# None of this mess will be acceptable from here on. 
+
+# R version 4.0.3
+# ggplot2 version 3.3.2
+
+```

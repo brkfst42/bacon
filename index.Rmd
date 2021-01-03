@@ -1,0 +1,9 @@
+---
+title: "index.Rmd"
+author: "Freda"
+date: "1/3/2021"
+output:
+  prettydoc::html_pretty:
+    theme: tactile
+    highlight: github
+---

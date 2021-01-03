@@ -1,0 +1,28 @@
+
+name: "Breakfast 1001"
+author: "Freda"
+output_dir: 
+output: 
+  prettydoc::html_pretty:
+    theme: tactile
+    highlight: github
+navbar: 
+  title: "Breakfast"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "January"
+      menu:
+      - text: Dataviz
+      - text: Jan01
+        href: dataviz0001.html
+      - text: Jan02
+        href: dataviz0002.html
+      - text: Jan03
+        href: dataviz0003.html
+      - text: Jan04
+        href: dataviz_lolli_0004.html
+      - text: "----------"
+      - text: Statistics
+      - text: Jan05
+        href: stat_0005.html

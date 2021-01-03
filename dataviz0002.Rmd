@@ -1,0 +1,119 @@
+---
+title: Breakfast_0002
+author: Freda Wan
+date: January 2, 2021
+output:
+  prettydoc::html_pretty:
+    theme: tactile
+    highlight: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Good morning, here is Day 2 breakfast time. ##
+
+Today I am going to reproduce the charts in Figure 1 of the same paper: 
+Dawtry, R. J., Sutton, R. M., & Sibley, C. G. (2015). Why Wealthier People Think People Are Wealthier, and Why It Matters: From Social Sampling to Attitudes to Redistribution. Psychological Science, 26(9), 1389–1400. https://doi.org/10.1177/0956797615586560
+
+The data is available at Open Science Foundation: https://osf.io/3mftr/
+I'm using the data file "1a processed.xlsx" under Study 1a. 
+
+![](Large_image_Fig1.jpeg)
+
+**Note** I was going to reproduce both charts, but ran out of time. 
+I ended up focusing on Fig 1b, and will do Fig 1a tomorrow. 
+
+The **hashtag #FUTURE** helps me find where I'd like to improve when I look back at this someday. 
+
+```{r, warnings=FALSE, message=FALSE}
+
+library(tidyverse)
+
+dat01 <- read_csv("Dawtry Sutton and Sibley 2015 Study 1a.csv") 
+
+# sort data by PS, split by tertiles
+# create new column, with labels for wealthiest tertile, poorest tertile, and middle tertile (w, p, m)
+dat01 <- dat01 %>% select(Household_Income, PD_15, PD_30, PD_45, PD_60, PD_75, PD_90, 
+                          PD_105, PD_120, PD_135, PD_150, PD_150plus) %>%
+                  mutate(tertile = ntile(Household_Income, 3)) %>%
+                  filter(tertile %in% c("1", "3")) %>% # removes middle tertile and NA 
+                  select(-Household_Income)
+
+# note tertile 1 is lower income, tertile 3 is higher income
+#FUTURE: any better way than typing out col names in select() step? starts_with()? 
+#FUTURE: how to replace NA with column mean?
+
+#below: FUTURE learn to do this without splitting into 2 tibbles and joining again
+dat_tertile1 <- dat01 %>% filter(tertile == 1) %>%
+                          pivot_longer(cols = starts_with("PD_"), 
+                                 names_to = "income_bracket", 
+                                 values_to = "count") %>%
+                          group_by(income_bracket) %>%
+                          summarise(perc = sum(count)/10100 *100, 
+                                    tertile = 1)
+
+dat_tertile3 <- dat01 %>% filter(tertile == 3) %>%
+                          pivot_longer(cols = starts_with("PD_"), 
+                                 names_to = "income_bracket", 
+                                 values_to = "count") %>%
+                          group_by(income_bracket) %>%
+                          summarise(perc = sum(count)/10000 *100, 
+                                    tertile = 3)
+
+# adding the tertile column back seems idiotic! #FUTURE
+
+dat02 <- dat_tertile1 %>%  mutate(tertile = "Poorest Tertile of Participants") %>%
+                        bind_rows(dat_tertile3 %>%
+                        mutate(tertile = "Wealthiest Tertile of Participants")) %>% 
+                        mutate(income_bracket = recode(income_bracket, 
+                                                       "PD_15" = 1, 
+                                                       "PD_30" = 2, 
+                                                       "PD_45" = 3, 
+                                                       "PD_60" = 4, 
+                                                       "PD_75" = 5, 
+                                                       "PD_90" = 6, 
+                                                       "PD_105" = 7, 
+                                                       "PD_120" = 8, 
+                                                       "PD_135" = 9, 
+                                                       "PD_150" = 10, 
+                                                       "PD_150plus" = 11))
+                        
+# machine cannot understand the income brackets as continuous variable
+# recode solves the problem, but seems clunky
+
+ggplot(dat02, 
+       aes(y = perc, x = income_bracket, 
+           color = tertile)) + 
+  geom_line(show.legend = TRUE, size = 1.2, aes(linetype= tertile)) +
+  scale_color_manual(values=c("#FFA500","#008080")) +
+  ggtitle("1b. Participants' Estimates of Income Distribution in US Population") + 
+  
+  scale_x_continuous(name = "Income ('000 USD)",
+                   breaks = c(1,2,3,4,5,6,7,8,9,10,11),
+                   labels = c("0-15","15-30", "30-45", "45-60", "60-75", 
+                              "75-90", "90-105", "105-120", "120-135", "135-150", 
+                              "150+"), 
+                   expand = c(0,0)) +
+  scale_y_continuous(name = "Estimated Mean Percentage of People", 
+                     limits = c(0, 30), 
+                     expand = c(0,0)) +
+
+  theme_classic() +
+  
+  theme(plot.title = element_text(hjust = 0.5, face = "bold", size=14), 
+        axis.text.x = element_text(angle = 45, hjust=1, size=12),
+        axis.text.y = element_text(size=12), 
+        axis.title.x = element_text(size=13, face = "bold"), 
+        axis.title.y = element_text(size=13, face = "bold"), 
+        legend.title = element_blank(), 
+        legend.position=c(0.8, 0.8))
+
+# R version 4.0.3
+# ggplot2 version 3.3.2
+
+```
+
+Reference for manipulating graph aesthetics:
+http://www.sthda.com/english/wiki/ggplot2-line-types-how-to-change-line-types-of-a-graph-in-r-software
