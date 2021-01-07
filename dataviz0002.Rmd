@@ -1,6 +1,5 @@
 ---
 title: Breakfast_0002
-author: Freda Wan
 date: January 2, 2021
 output:
   prettydoc::html_pretty:
