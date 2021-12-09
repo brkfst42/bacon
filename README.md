@@ -1,4 +1,2 @@
 # bacon
-Join me for breakfast coding! 
-
-Note: This repository contains the development version of the website. 
+Random coding sessions at breakfast time, Jan 2021. 
